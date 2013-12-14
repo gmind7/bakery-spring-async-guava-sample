@@ -52,8 +52,8 @@ public class BakeryAsyncFunction {
 					for(Baker baker: bakers){
 						bakerNames.add(baker.getName());
 						latch.countDown();
-						log.debug("baker id:{} name:{}", new Object[] { baker.getId(), baker.getName() });						
-					}
+						log.debug("asyncFunction latch Count : {}, baker id:{} name:{}", new Object[] { latch.getCount(), baker.getId(), baker.getName(), });
+						}
 					SettableFuture<List<String>> constFuture = SettableFuture.create();
 					constFuture.set(bakerNames);
 					return constFuture;
@@ -66,7 +66,7 @@ public class BakeryAsyncFunction {
 			
 			log.debug("mergedResult : {}", mergedResult.toString());
 			
-			latch.await(10, TimeUnit.SECONDS);
+			latch.await(5, TimeUnit.SECONDS);
 			
 		} catch (ExecutionException | TimeoutException | InterruptedException e) {
 			e.printStackTrace();

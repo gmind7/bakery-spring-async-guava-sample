@@ -37,7 +37,7 @@ public class BakeryFutureCallback {
 				FutureCallback<Baker> findResult = new FutureCallback<Baker>() {
 					public void onSuccess(Baker baker) {
 						latch.countDown();
-						log.debug("baker id:{} name:{}", new Object[] { baker.getId(), baker.getName() });
+						log.debug("futureCallback latch Count : {}, baker id:{} name:{}", new Object[] { latch.getCount(), baker.getId(), baker.getName(), });
 					}
 	
 					public void onFailure(Throwable thrown) {
@@ -48,7 +48,7 @@ public class BakeryFutureCallback {
 				Futures.addCallback(future, findResult);
 			}
 			
-			latch.await(10, TimeUnit.SECONDS);
+			latch.await(5, TimeUnit.SECONDS);
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();

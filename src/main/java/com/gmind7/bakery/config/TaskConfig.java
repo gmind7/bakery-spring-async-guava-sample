@@ -36,12 +36,11 @@ public class TaskConfig implements SchedulingConfigurer, AsyncConfigurer {
     
     @Override
     public Executor getAsyncExecutor() {
-            return taskExecutor();
+        return taskExecutor();
     }
     
     @Bean
     public Executor taskExecutor() {
-    	
     	ListeningThreadPoolTaskExecutor executor = new ListeningThreadPoolTaskExecutor();
     	executor.setCorePoolSize(40);
     	executor.setMaxPoolSize(50);
