@@ -1,5 +1,7 @@
 description = "Spring Async Google Guava"
 
+defaultTasks 'clean', 'bootRun'
+
 ext {
     gradleScriptDir = "${rootProject.projectDir}/gradle"
 }
