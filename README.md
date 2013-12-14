@@ -13,6 +13,5 @@ $ test : testSpringBootRunner.java > Run As > JUnit Test
 With gradle:
 
 ```
-$ gradle build
-$ java -jar build/libs/*.jar
+$ gradlew bootRun
 ```
