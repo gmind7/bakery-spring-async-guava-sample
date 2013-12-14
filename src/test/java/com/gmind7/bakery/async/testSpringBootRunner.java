@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class testSpringBootRunner {
 	
 	@Test
-	public void testTaskrun() {
+	public void testRunAsync() {
 		
 	}
 	

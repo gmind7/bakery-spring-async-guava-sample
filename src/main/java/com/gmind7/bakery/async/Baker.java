@@ -15,9 +15,4 @@ public class Baker implements Serializable {
 	
 	private String name;
 	
-	
-	
-	
-	
-	
 }

@@ -41,8 +41,8 @@ public class BakeryFutureCallback {
 					}
 	
 					public void onFailure(Throwable thrown) {
-						log.warn(thrown.getMessage());
 						latch.countDown();
+						log.warn(thrown.getMessage());
 					}
 				};
 				Futures.addCallback(future, findResult);
