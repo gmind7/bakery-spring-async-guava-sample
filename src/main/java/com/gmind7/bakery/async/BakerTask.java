@@ -4,8 +4,6 @@ import java.util.Map;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadLocalRandom;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Component;
 import com.google.common.collect.Maps;
 
 @Component
-@Slf4j
 public class BakerTask {
 	
 	private final Map<String, Baker> bakers = Maps.newHashMap();

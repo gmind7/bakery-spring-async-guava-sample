@@ -72,10 +72,10 @@ repositories {
 dependencies {
 	
 	// Spring
-	compile("org.springframework:spring-aop:$springVersion") { force = true }
 	compile("org.springframework:spring-core:$springVersion") { force = true }
 	compile("org.springframework:spring-beans:$springVersion") { force = true }
-	compile("org.springframework:spring-aspects:$springVersion") { force = true }
+	compile("org.springframework:spring-aop:$springVersion") { force = true }
+    compile("org.springframework:spring-aspects:$springVersion") { force = true }
 	compile("org.springframework:spring-expression:$springVersion") { force = true }
 	compile("org.springframework.boot:spring-boot-starter:$springBootVersion") { force = true }
 	
