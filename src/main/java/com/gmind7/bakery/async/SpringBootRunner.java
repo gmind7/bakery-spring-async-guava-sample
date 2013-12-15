@@ -22,8 +22,8 @@ public class SpringBootRunner implements CommandLineRunner {
 	
 	@Override
 	public void run(String... arg0) throws Exception {
-		asyncFunction.doAction();
 		futureCallbak.doAction();
+		asyncFunction.doAction();
 	}
 	
 	public static void main(String[] args) throws Exception {

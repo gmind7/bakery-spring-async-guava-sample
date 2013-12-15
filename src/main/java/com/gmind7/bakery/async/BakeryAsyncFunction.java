@@ -33,7 +33,7 @@ public class BakeryAsyncFunction {
 		
         try {
         	
-	        String[] searchKeys = {"gmind1", "gmind2"};
+	        String[] searchKeys = {"gmind1", "gmind2", "gmind3", "gmind4", "gmind5", "gmind6", "gmind7"};
 			
 			final CountDownLatch latch = new CountDownLatch(searchKeys.length);
 			
@@ -52,8 +52,8 @@ public class BakeryAsyncFunction {
 					for(Baker baker: bakers){
 						bakerNames.add(baker.getName());
 						latch.countDown();
-						log.debug("asyncFunction latch Count : {}, baker id:{} name:{}", new Object[] { latch.getCount(), baker.getId(), baker.getName(), });
-						}
+						log.debug("asyncFunction baker id:{} name:{}", new Object[] { baker.getId(), baker.getName(), });
+					}
 					SettableFuture<List<String>> constFuture = SettableFuture.create();
 					constFuture.set(bakerNames);
 					return constFuture;
@@ -62,13 +62,13 @@ public class BakeryAsyncFunction {
 			
 			ListenableFuture<List<String>> futureMergedResult = Futures.transform(collectedResults, flattenFunction);
 			
-			List<String> mergedResult = futureMergedResult.get(5, TimeUnit.SECONDS);
+			List<String> mergedResult = futureMergedResult.get();
 			
 			log.debug("mergedResult : {}", mergedResult.toString());
 			
-			latch.await(5, TimeUnit.SECONDS);
+			latch.await();
 			
-		} catch (ExecutionException | TimeoutException | InterruptedException e) {
+		} catch (ExecutionException | InterruptedException e) {
 			e.printStackTrace();
 		}
 		

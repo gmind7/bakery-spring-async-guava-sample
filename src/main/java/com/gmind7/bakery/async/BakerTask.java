@@ -2,6 +2,7 @@ package com.gmind7.bakery.async;
 
 import java.util.Map;
 import java.util.concurrent.Future;
+import java.util.concurrent.ThreadLocalRandom;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,8 +30,16 @@ public class BakerTask {
 	
 	@Async
 	public Future<Baker> findOne(String bakerName) {
+		
+		try {
+            // test thread sleep
+            Thread.sleep(ThreadLocalRandom.current().nextInt(3) * 1000);
+	    } catch (InterruptedException e) {
+	        e.printStackTrace();
+	    }
+		
 		Baker baker = (Baker)bakers.get(bakerName);
-		log.debug("findOne : {}", baker.toString());
+		
 		return new AsyncResult<Baker>(baker);
 	}
 }

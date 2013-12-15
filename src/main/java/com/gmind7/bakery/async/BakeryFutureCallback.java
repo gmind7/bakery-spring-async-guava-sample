@@ -28,7 +28,7 @@ public class BakeryFutureCallback {
 		
         try {
         	
-	        String[] searchKeys = {"gmind1", "gmind2"};
+        	String[] searchKeys = {"gmind1", "gmind2", "gmind3", "gmind4", "gmind5", "gmind6", "gmind7"};
 			
 			final CountDownLatch latch = new CountDownLatch(searchKeys.length);
 			
@@ -37,7 +37,7 @@ public class BakeryFutureCallback {
 				FutureCallback<Baker> findResult = new FutureCallback<Baker>() {
 					public void onSuccess(Baker baker) {
 						latch.countDown();
-						log.debug("futureCallback latch Count : {}, baker id:{} name:{}", new Object[] { latch.getCount(), baker.getId(), baker.getName(), });
+						log.debug("futureCallback baker id:{} name:{}", new Object[] { baker.getId(), baker.getName(), });
 					}
 	
 					public void onFailure(Throwable thrown) {
@@ -48,7 +48,7 @@ public class BakeryFutureCallback {
 				Futures.addCallback(future, findResult);
 			}
 			
-			latch.await(5, TimeUnit.SECONDS);
+			latch.await();
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
