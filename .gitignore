@@ -6,4 +6,14 @@
 *.ear
 /build
 /bin
-/.apt_generated
+
+# IDE Files #
+.classpath
+.project
+/.settings
+
+# Gradle Files #
+/.gradle
+
+# JRevel Files #
+rebel.xml
