@@ -30,16 +30,13 @@ public class BakerTask {
 	
 	@Async
 	public Future<Baker> findOne(String bakerName) {
-		
 		try {
-            // test thread sleep
-            Thread.sleep(ThreadLocalRandom.current().nextInt(3) * 1000);
+			// test thread sleep
+			Thread.sleep(ThreadLocalRandom.current().nextInt(3) * 1000);
 	    } catch (InterruptedException e) {
 	        e.printStackTrace();
 	    }
-		
 		Baker baker = (Baker)bakers.get(bakerName);
-		
 		return new AsyncResult<Baker>(baker);
 	}
 }
