@@ -74,6 +74,8 @@ dependencies {
 	// Spring
 	compile("org.springframework:spring-core:$springVersion") { force = true }
 	compile("org.springframework:spring-beans:$springVersion") { force = true }
+	compile("org.springframework:spring-context:$springVersion") { force = true }
+	compile("org.springframework:spring-context-support:$springVersion") { force = true }
 	compile("org.springframework:spring-aop:$springVersion") { force = true }
     compile("org.springframework:spring-aspects:$springVersion") { force = true }
 	compile("org.springframework:spring-expression:$springVersion") { force = true }
@@ -88,6 +90,7 @@ dependencies {
 	compile "javax.inject:javax.inject:1"
   
 	// Logging
+	runtime "ch.qos.logback:logback-classic:$logbackVersion"
 	compile "org.slf4j:slf4j-api:$slf4jVersion"
 	runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion"
   
@@ -102,7 +105,5 @@ dependencies {
 	testCompile "com.jayway.jsonpath:json-path:$jsonpathVersion"
 	testCompile "org.mockito:mockito-core:$mockitoVersion"
 	testCompile("org.springframework:spring-test:$springVersion") { force = true }
-	testRuntime("org.springframework:spring-context-support:$springVersion") { force = true }
 	testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion") { force = true }
-	testRuntime "ch.qos.logback:logback-classic:$logbackVersion"
 }
