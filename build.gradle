@@ -1,17 +1,20 @@
 description = "Spring Async Google Guava"
 
+defaultTasks 'build'
+
 ext {
     gradleScriptDir = "${rootProject.projectDir}/gradle"
 }
 
 buildscript {
 	repositories {
+	    mavenCentral()
 		maven { url "http://repo.spring.io/plugins-release" }		
 		maven { url "http://repo.spring.io/plugins-milestone" }
 		maven { url "http://repo.spring.io/plugins-snapshot" }
 	}
 	dependencies {
-		classpath 'org.springframework.build.gradle:bundlor-plugin:0.1.2'
+		classpath "org.springframework.build.gradle:bundlor-plugin:$gradleSpringBundlorPluginVersion"
 		classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
 	}
 }
