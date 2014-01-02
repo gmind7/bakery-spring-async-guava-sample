@@ -12,7 +12,7 @@ $ java -jar ./build/libs/spring-async-guava-sample-0.0.1.RELEASE.jar
 ### gradle
 
 ```
-$ gradle runJar
+$ gradle bootRun
 ```
 
 ### IDE
