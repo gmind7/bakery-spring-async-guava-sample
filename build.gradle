@@ -1,7 +1,5 @@
 description = "Spring Async Google Guava"
 
-defaultTasks 'clean', 'bootRun'
-
 ext {
     gradleScriptDir = "${rootProject.projectDir}/gradle"
 }
@@ -41,8 +39,6 @@ apply plugin: "maven"
 apply plugin: 'spring-boot'
 apply from: "${gradleScriptDir}/ide.gradle"
 apply from: "${gradleScriptDir}/maven.gradle"
-
-group = "com.gmind7.bakery"
 
 configurations {
     compile.extendsFrom providedCompile
