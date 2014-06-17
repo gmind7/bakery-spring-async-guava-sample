@@ -27,7 +27,19 @@ public class SpringBootRunner implements CommandLineRunner {
 	}
 	
 	public static void main(String[] args) throws Exception {
-        SpringApplication.run(SpringBootRunner.class, args);
+		
+//		Properties properties = new Properties();
+//		
+//		String springProfilesActvie = properties.getProperty("spring.profiles.active");
+//		
+//		SpringApplication app = new SpringApplication(SpringBootRunner.class);
+		
+//		if(springProfilesActvie==null) {
+//			properties.setProperty("spring.profiles.active", "loc");
+//			app.setDefaultProperties(properties);
+//		}
+
+        	SpringApplication.run(SpringBootRunner.class, args);
 	}
 
 }
